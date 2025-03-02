@@ -191,8 +191,8 @@ if __name__ == "__main__":
         if (episode + 1) % 20 == 0:
             epsilon_threshold = EPSILON_END + (EPSILON_START - EPSILON_END) * math.exp(-1. * steps_done / EPSILON_DECAY)
             print("Epsilon:", epsilon_threshold)
-            torch.save(dqn.state_dict(), f"dqn_model_new.pth")
-            np.save('reward_per_episode_new.npy', reward_per_episode)
-            np.save('reward_per_step_new.npy', reward_per_step)
+            torch.save(dqn.state_dict(), f"dqn_model.pth")
+            np.save('reward_per_episode.npy', reward_per_episode)
+            np.save('reward_per_step.npy', reward_per_step)
 
         print(f"Episode {episode + 1}/{NUM_EPISODES}, Reward: {cumulative_reward}, Steps: {episode_steps}")
